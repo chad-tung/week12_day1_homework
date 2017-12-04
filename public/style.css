@@ -1,3 +1,11 @@
+body {
+  background-color: beige;
+}
+
+h1 {
+  font-style: italic;
+}
+
 .logo {
   width: 50px;
   height: 50px;
@@ -5,4 +13,8 @@
 
 .red-quote{
   color: red;
+}
+
+.picture{
+  list-style: none;
 }
