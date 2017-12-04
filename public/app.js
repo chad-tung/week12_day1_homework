@@ -21,6 +21,14 @@ var app = function() {
   var createCatPic = function(pic) {
     var catPic = document.createElement('li');
     var picture = document.createElement('img');
+    picture.width = 500;
+    picture.src = pic;
+    catPic.innerText = picture;
+    return catPic;
+  }
+
+  var appendElements = function() {
+
   }
 
 
