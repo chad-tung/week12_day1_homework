@@ -2,12 +2,12 @@ var app = function() {
 
   var createCatUl = function(){
     var catUl = document.createElement('ul');
-    catArticle.classList.add('cat');
+    catUl.classList.add('cat');
     return catUl;
   }
 
   var createCatName = function(name) {
-    car catName = document.createElement('li');
+    var catName = document.createElement('li');
     catName.innerText = `Name: ${name}`;
     return catName;
   }
@@ -23,15 +23,33 @@ var app = function() {
     var picture = document.createElement('img');
     picture.width = 500;
     picture.src = pic;
-    catPic.innerText = picture;
+    catPic.appendChild(picture);
     return catPic;
   }
 
-  var appendElements = function() {
+  var appendElements = function(name, food, pic) {
+    var catUl = createCatUl();
+    catUl.appendChild(name);
+    catUl.appendChild(food);
+    catUl.appendChild(pic);
 
+
+    var cats = document.querySelector('#cats');
+    cats.appendChild(catUl);
   }
 
+  var createCat = function(name, food, pic) {
+    var catName = createCatName(name);
+    var catFood = createCatFaveFood(food);
+    var catPic = createCatPic(pic);
+
+    appendElements(catName, catFood, catPic);
+  }
+
+  createCat("Chad", "Duck", 'http://canitbesaturdaynow.com/images/fpics/530/4_10_09_%20(67).jpg');
 
 }
+
+
 
 window.onload = app;
